@@ -1,0 +1,19 @@
+{
+  "name": "scrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "amazon": "node amazon/index.js",
+    "flipkart": "node flipkart/index.js",
+    "ebay": "node ebay/index.js",
+    "reliance": "node reliance/index.js",
+    "start": "concurrently \"npm run amazon\" \"npm run flipkart\" \"npm run ebay\" \"npm run reliance\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
