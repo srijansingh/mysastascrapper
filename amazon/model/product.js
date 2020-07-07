@@ -44,5 +44,5 @@ const amazonSchema = new mongoose.Schema({
     timestamps : true
 })
 
-const Amazon = mongoose.model('maincheck', amazonSchema);
+const Amazon = mongoose.model('amazonproduct', amazonSchema);
 module.exports = Amazon;

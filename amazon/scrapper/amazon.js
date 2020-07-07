@@ -85,30 +85,32 @@ module.exports = {
                     const category = "Mobile";
                     const productDesc = {id,title,price,brand,description, rating,link,image, allimage};
                     
-                        const productListing =new Amazonlisting(
-                        {
-                            id : id,
-                            link:link,
-                            brand: brand,
-                            category: category,
-                            subcategory:subcategory,
-                            title:title,
-                            price:price,
-                            rating:rating,
-                            description:description,
-                            image:image,
-                            allimage:allimage,
-                        }
-                        
-                        );
-
-                        productListing.save() 
-                        .then((listing)=> {
-                            console.log(listing)
-                        })
-                        .catch(err => {
-                            console.log(err);
-                        })
+                    Amazonlisting.update(
+                        {id:id},
+                        { 
+                            $setOnInsert : {
+                                id : id,
+                                link:link,
+                                brand: brand,
+                                category: category,
+                                subcategory:subcategory,
+                                title:title,
+                                price:price,
+                                rating:rating,
+                                description:description,
+                                image:image,
+                                allimage:allimage,
+                                status:"inactive"
+                            }
+                        },
+                        {upsert:true}
+                    ).then(res => {
+                        console.log(res)
+                   
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
 
                     return product;
                 })    
@@ -190,30 +192,32 @@ module.exports = {
             const category = "Camera";
             const productDesc = {id,title,price,brand,description, rating,link,image, allimage};
             
-                const productListing =new Amazonlisting(
-                {
-                    id : id,
-                    link:link,
-                    brand: brand,
-                    category: category,
-                    subcategory:subcategory,
-                    title:title,
-                    price:price,
-                    rating:rating,
-                    description:description,
-                    image:image,
-                    allimage:allimage,
-                }
-                
-                );
-
-                productListing.save() 
-                .then((listing)=> {
-                    console.log(listing)
-                })
-                .catch(err => {
-                    console.log(err);
-                })
+            Amazonlisting.update(
+                {id:id},
+                { 
+                    $setOnInsert : {
+                        id : id,
+                        link:link,
+                        brand: brand,
+                        category: category,
+                        subcategory:subcategory,
+                        title:title,
+                        price:price,
+                        rating:rating,
+                        description:description,
+                        image:image,
+                        allimage:allimage,
+                        status:"inactive"
+                    }
+                },
+                {upsert:true}
+            ).then(res => {
+                console.log(res)
+           
+            })
+            .catch(err => {
+                console.log(err)
+            })
 
             return product;
         })    
@@ -297,30 +301,32 @@ laptop : () => {
             const category = "Laptop";
             const productDesc = {id,title,price,brand,description, rating,link,image, allimage};
             
-                const productListing =new Amazonlisting(
-                {
-                    id : id,
-                    link:link,
-                    brand: brand,
-                    category: category,
-                    subcategory:subcategory,
-                    title:title,
-                    price:price,
-                    rating:rating,
-                    description:description,
-                    image:image,
-                    allimage:allimage,
-                }
-                
-                );
-
-                productListing.save() 
-                .then((listing)=> {
-                    console.log(listing)
-                })
-                .catch(err => {
-                    console.log(err);
-                })
+            Amazonlisting.update(
+                {id:id},
+                { 
+                    $setOnInsert : {
+                        id : id,
+                        link:link,
+                        brand: brand,
+                        category: category,
+                        subcategory:subcategory,
+                        title:title,
+                        price:price,
+                        rating:rating,
+                        description:description,
+                        image:image,
+                        allimage:allimage,
+                        status:"inactive"
+                    }
+                },
+                {upsert:true}
+            ).then(res => {
+                console.log(res)
+           
+            })
+            .catch(err => {
+                console.log(err)
+            })
 
             return product;
         })    

@@ -16,5 +16,5 @@ const amazonSchema = new mongoose.Schema({
     timestamps : true
 })
 
-const Flipkart = mongoose.model('comapredata', amazonSchema);
+const Flipkart = mongoose.model('flipkartproduct', amazonSchema);
 module.exports = Flipkart;
